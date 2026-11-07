@@ -1,140 +1,372 @@
 
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="description" content="Alireza - Python Backend Developer specializing in Django and backend development.">
+    <meta name="description" content="Alireza | Python Backend Developer specializing in Django, REST APIs and backend engineering.">
+    <meta name="theme-color" content="#080d19">
 
     <title>Alireza | Python Backend Developer</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- Header -->
-    <header>
-        <nav>
-            <a href="#" class="logo">Alireza.dev</a>
+    <!-- Background -->
+    <div class="background-glow"></div>
 
-            <ul>
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="navbar container">
+
+            <a href="#home" class="logo">
+                <span class="logo-bracket">&lt;</span>Alireza<span class="logo-dot">.</span><span class="logo-bracket">/&gt;</span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+
+            <a href="https://github.com/alirezhaksez-star"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="nav-button">
+                GitHub <span>↗</span>
+            </a>
+
         </nav>
     </header>
 
     <main>
 
-        <!-- Hero Section -->
-        <section id="home">
+        <!-- Hero -->
+        <section class="hero container" id="home">
 
-            <p>Hello, I'm</p>
+            <div class="hero-content">
 
-            <h1>Alireza</h1>
+                <div class="availability">
+                    <span class="status-dot"></span>
+                    Passionate about building great software
+                </div>
 
-            <h2>Python Backend Developer</h2>
+                <p class="eyebrow">HELLO, I'M</p>
 
-            <p>
-                Passionate about Python, Django,
-                backend development and building
-                challenging software projects.
-            </p>
+                <h1>Alireza<span class="accent">.</span></h1>
 
-            <a href="#projects">Explore My Projects</a>
+                <h2>
+                    Python Backend
+                    <span class="accent">Developer</span>
+                </h2>
 
-            <a href="#contact">Contact Me</a>
+                <div class="typing-line">
+                    <span class="terminal-symbol">›</span>
+                    <span id="typing-text"></span>
+                    <span class="cursor">|</span>
+                </div>
 
-        </section>
-
-        <!-- About Section -->
-        <section id="about">
-
-            <h2>About Me</h2>
-
-            <p>
-                I'm a Python developer passionate about
-                backend development and building
-                practical web applications.
-
-                I enjoy solving challenging problems,
-                learning new technologies and developing
-                scalable backend systems.
-            </p>
-
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills">
-
-            <h2>Technical Skills</h2>
-
-            <ul>
-                <li>Python</li>
-                <li>Django</li>
-                <li>Django REST Framework</li>
-                <li>PostgreSQL</li>
-                <li>SQL Server</li>
-                <li>Redis</li>
-                <li>Git & GitHub</li>
-                <li>Docker</li>
-                <li>Linux</li>
-                <li>Computer Networks</li>
-            </ul>
-
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects">
-
-            <h2>Featured Projects</h2>
-
-            <article>
-                <h3>Contract Renewal Workflow</h3>
-
-                <p>
-                    A Django-based workflow management
-                    system for employee contract renewals.
+                <p class="hero-description">
+                    I build backend applications with Python and Django.
+                    I enjoy solving challenging problems, designing reliable
+                    systems and turning ideas into practical software.
                 </p>
 
-            </article>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary">
+                        Explore Projects <span>↗</span>
+                    </a>
 
-            <article>
-                <h3>Django Blog</h3>
+                    <a href="#contact" class="btn btn-outline">
+                        Get in Touch
+                    </a>
+                </div>
 
-                <p>
-                    A web application developed with
-                    Django and Python.
-                </p>
+                <div class="social-links">
+                    <a href="https://github.com/alirezhaksez-star"
+                       target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+                    <span>·</span>
+                    <a href="#about">About Me</a>
+                </div>
 
-            </article>
+            </div>
+
+            <!-- Code Card -->
+            <div class="hero-visual">
+
+                <div class="code-card">
+
+                    <div class="code-header">
+                        <div class="window-dots">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <span>developer.py</span>
+                    </div>
+
+                    <div class="code-content">
+                        <p><span class="code-purple">class</span> <span class="code-yellow">Developer</span>:</p>
+
+                        <p class="indent">
+                            name = <span class="code-green">"Alireza"</span>
+                        </p>
+
+                        <p class="indent">
+                            role = <span class="code-green">"Backend Developer"</span>
+                        </p>
+
+                        <p class="indent">
+                            language = <span class="code-green">"Python"</span>
+                        </p>
+
+                        <p class="indent">
+                            framework = <span class="code-green">"Django"</span>
+                        </p>
+
+                        <br>
+
+                        <p class="indent">
+                            <span class="code-purple">def</span>
+                            <span class="code-blue">build</span>(self):
+                        </p>
+
+                        <p class="indent-2">
+                            <span class="code-purple">return</span>
+                            <span class="code-green">"Something great"</span>
+                        </p>
+
+                        <br>
+
+                        <p class="code-comment">
+                            # Always learning. Always building.
+                        </p>
+                    </div>
+
+                    <div class="code-footer">
+                        <span>● Python</span>
+                        <span>UTF-8</span>
+                    </div>
+
+                </div>
+
+                <div class="floating-tag tag-python">
+                    <span>🐍</span> Python
+                </div>
+
+                <div class="floating-tag tag-django">
+                    Django <span>⚡</span>
+                </div>
+
+            </div>
 
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact">
+        <!-- About -->
+        <section class="section container" id="about">
 
-            <h2>Let's Connect</h2>
+            <div class="section-heading">
+                <span class="section-number">01 / ABOUT</span>
+                <h2>About <span class="accent">Me</span></h2>
+                <p>A little introduction about my journey.</p>
+            </div>
 
-            <p>
-                Interested in backend development
-                and challenging projects.
-            </p>
+            <div class="about-card">
 
-            <a href="https://github.com/alirezhaksez-star">
-                GitHub
-            </a>
+                <div class="about-icon">⌨</div>
+
+                <div>
+                    <h3>Building things that matter.</h3>
+
+                    <p>
+                        I'm a Python developer passionate about backend
+                        engineering and web application development.
+
+                        My main focus is Django and building maintainable,
+                        efficient backend systems. I'm also familiar with
+                        relational databases, caching, Linux and networking
+                        fundamentals.
+
+                        I enjoy challenging projects because they push me
+                        to learn, think deeper and become a better developer.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Skills -->
+        <section class="section container" id="skills">
+
+            <div class="section-heading">
+                <span class="section-number">02 / TECHNOLOGIES</span>
+                <h2>Technical <span class="accent">Skills</span></h2>
+                <p>Tools and technologies I work with and explore.</p>
+            </div>
+
+            <div class="skills-grid">
+
+                <div class="skill-card">
+                    <span class="skill-icon">🐍</span>
+                    <h3>Python</h3>
+                    <p>Backend Programming</p>
+                </div>
+
+                <div class="skill-card">
+                    <span class="skill-icon">🌐</span>
+                    <h3>Django</h3>
+                    <p>Web Development</p>
+                </div>
+
+                <div class="skill-card">
+                    <span class="skill-icon">🔌</span>
+                    <h3>DRF</h3>
+                    <p>REST API Development</p>
+                </div>
+
+                <div class="skill-card">
+                    <span class="skill-icon">🐘</span>
+                    <h3>PostgreSQL</h3>
+                    <p>Database Management</p>
+                </div>
+
+                <div class="skill-card">
+                    <span class="skill-icon">⚡</span>
+                    <h3>Redis</h3>
+                    <p>Caching & Data Storage</p>
+                </div>
+
+                <div class="skill-card">
+                    <span class="skill-icon">🐳</span>
+                    <h3>Docker</h3>
+                    <p>Containerization</p>
+                </div>
+
+                <div class="skill-card">
+                    <span class="skill-icon">🐧</span>
+                    <h3>Linux</h3>
+                    <p>Operating Systems</p>
+                </div>
+
+                <div class="skill-card">
+                    <span class="skill-icon">🔧</span>
+                    <h3>Git</h3>
+                    <p>Version Control</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Projects -->
+        <section class="section container" id="projects">
+
+            <div class="section-heading">
+                <span class="section-number">03 / PORTFOLIO</span>
+                <h2>Featured <span class="accent">Projects</span></h2>
+                <p>Some projects from my development journey.</p>
+            </div>
+
+            <div class="projects-grid">
+
+                <article class="project-card">
+                    <div class="project-top">
+                        <span class="project-folder">📁</span>
+                        <span class="project-label">BACKEND PROJECT</span>
+                    </div>
+
+                    <h3>Contract Renewal Workflow</h3>
+
+                    <p>
+                        A Django-based workflow management system
+                        designed to manage employee contract renewals,
+                        organizational units and approval processes.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>Django</span>
+                        <span>PostgreSQL</span>
+                    </div>
+
+                    <a href="https://github.com/alirezhaksez-star"
+                       target="_blank" rel="noopener noreferrer"
+                       class="project-link">
+                        View on GitHub ↗
+                    </a>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-top">
+                        <span class="project-folder">📁</span>
+                        <span class="project-label">WEB APPLICATION</span>
+                    </div>
+
+                    <h3>Django Advance Blog</h3>
+
+                    <p>
+                        A blog application built with Django,
+                        focusing on backend development,
+                        database relationships and web fundamentals.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>Django</span>
+                        <span>SQL</span>
+                    </div>
+
+                    <a href="https://github.com/alirezhaksez-star"
+                       target="_blank" rel="noopener noreferrer"
+                       class="project-link">
+                        View on GitHub ↗
+                    </a>
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- Contact -->
+        <section class="section container" id="contact">
+
+            <div class="contact-card">
+
+                <span class="section-number">04 / CONTACT</span>
+
+                <h2>Let's Build Something <span class="accent">Great.</span></h2>
+
+                <p>
+                    I'm always interested in learning, exploring
+                    new technologies and working on challenging
+                    software projects.
+                </p>
+
+                <a href="https://github.com/alirezhaksez-star"
+                   target="_blank" rel="noopener noreferrer"
+                   class="btn btn-primary">
+                    Find Me on GitHub ↗
+                </a>
+
+            </div>
 
         </section>
 
     </main>
 
-    <!-- Footer -->
-    <footer>
-        <p>© 2026 Alireza. All rights reserved.</p>
+    <footer class="footer">
+        <p>Designed & Built by <span class="accent">Alireza</span></p>
+        <p>© 2026 All rights reserved.</p>
     </footer>
+
+    <script src="script.js"></script>
 
 </body>
 </html>
