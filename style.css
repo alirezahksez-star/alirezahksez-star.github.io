@@ -1,0 +1,714 @@
+
+/* =========================
+   1. Global Styles
+========================= */
+
+:root {
+    --bg: #080d19;
+    --surface: #101827;
+    --surface-light: #151f31;
+    --border: #202d42;
+    --text: #e8edf7;
+    --muted: #91a0b8;
+    --accent: #38bdf8;
+    --purple: #818cf8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    width: min(1120px, 90%);
+    margin: auto;
+}
+
+.accent {
+    color: var(--accent);
+}
+
+.background-glow {
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background: #2563eb;
+    filter: blur(180px);
+    opacity: .12;
+    top: -200px;
+    right: -150px;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* =========================
+   2. Header & Navigation
+========================= */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(8, 13, 25, .85);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255,255,255,.06);
+}
+
+.navbar {
+    height: 76px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+}
+
+.logo {
+    font-family: 'Fira Code', monospace;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.logo-bracket,
+.logo-dot {
+    color: var(--accent);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--muted);
+    font-size: 13px;
+    transition: .3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--accent);
+}
+
+.nav-button {
+    border: 1px solid var(--border);
+    padding: 9px 17px;
+    border-radius: 8px;
+    font-size: 13px;
+    transition: .3s;
+}
+
+.nav-button:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* =========================
+   3. Hero Section
+========================= */
+
+.hero {
+    min-height: 650px;
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    align-items: center;
+    gap: 60px;
+    padding-top: 65px;
+    padding-bottom: 90px;
+}
+
+.availability {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    border-radius: 30px;
+    padding: 8px 15px;
+    color: var(--muted);
+    font-size: 11px;
+    margin-bottom: 30px;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background: #22c55e;
+    border-radius: 50%;
+    box-shadow: 0 0 12px #22c55e;
+}
+
+.eyebrow {
+    font-family: 'Fira Code', monospace;
+    color: var(--accent);
+    font-size: 14px;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+}
+
+.hero h1 {
+    font-size: clamp(55px, 8vw, 85px);
+    font-weight: 800;
+    letter-spacing: -5px;
+    line-height: 1.2;
+}
+
+.hero h2 {
+    font-size: clamp(25px, 4vw, 37px);
+    margin-top: 10px;
+    line-height: 1.4;
+}
+
+.typing-line {
+    margin-top: 20px;
+    font-family: 'Fira Code', monospace;
+    color: #a5b4fc;
+    font-size: 14px;
+    min-height: 25px;
+}
+
+.terminal-symbol {
+    color: #22c55e;
+}
+
+.cursor {
+    color: var(--accent);
+    animation: blink .8s infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+.hero-description {
+    color: var(--muted);
+    font-size: 14px;
+    max-width: 510px;
+    margin-top: 25px;
+    line-height: 2;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 32px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 13px 22px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.btn-primary {
+    color: #07111f;
+    background: var(--accent);
+}
+
+.btn-primary:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(56,189,248,.2);
+}
+
+.btn-outline {
+    border: 1px solid var(--border);
+    color: var(--text);
+}
+
+.btn-outline:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.social-links a:hover {
+    color: var(--accent);
+}
+
+/* =========================
+   4. Code Card
+========================= */
+
+.hero-visual {
+    position: relative;
+}
+
+.code-card {
+    background: #0e1727;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 30px 80px rgba(0,0,0,.35);
+    transform: rotate(1deg);
+}
+
+.code-header,
+.code-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    background: rgba(255,255,255,.025);
+    color: var(--muted);
+    font-size: 11px;
+    border-bottom: 1px solid var(--border);
+}
+
+.code-footer {
+    border-top: 1px solid var(--border);
+    border-bottom: 0;
+}
+
+.window-dots {
+    display: flex;
+    gap: 6px;
+}
+
+.window-dots span {
+    width: 9px;
+    height: 9px;
+    background: #f87171;
+    border-radius: 50%;
+}
+
+.window-dots span:nth-child(2) {
+    background: #fbbf24;
+}
+
+.window-dots span:nth-child(3) {
+    background: #4ade80;
+}
+
+.code-content {
+    padding: 35px 25px;
+    font-family: 'Fira Code', monospace;
+    font-size: 12px;
+    line-height: 2.8;
+    color: #dbeafe;
+    overflow-x: auto;
+}
+
+.indent {
+    padding-left: 25px;
+}
+
+.indent-2 {
+    padding-left: 50px;
+}
+
+.code-purple { color: #c084fc; }
+.code-yellow { color: #fbbf24; }
+.code-green { color: #86efac; }
+.code-blue { color: #38bdf8; }
+.code-comment { color: #64748b; }
+
+.floating-tag {
+    position: absolute;
+    background: #172338;
+    border: 1px solid #30415c;
+    border-radius: 10px;
+    padding: 10px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    box-shadow: 0 10px 30px rgba(0,0,0,.3);
+    animation: float 4s ease-in-out infinite;
+}
+
+.tag-python {
+    top: -20px;
+    right: -20px;
+}
+
+.tag-django {
+    bottom: -20px;
+    left: -25px;
+    animation-delay: 1s;
+}
+
+@keyframes float {
+    50% { transform: translateY(-12px); }
+}
+
+/* =========================
+   5. Sections
+========================= */
+
+.section {
+    padding-top: 85px;
+    padding-bottom: 55px;
+}
+
+.section-heading {
+    margin-bottom: 35px;
+}
+
+.section-number {
+    color: var(--accent);
+    font-family: 'Fira Code', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.section-heading h2 {
+    font-size: 35px;
+    margin-top: 10px;
+}
+
+.section-heading p {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+/* =========================
+   6. About
+========================= */
+
+.about-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+    padding: 35px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+}
+
+.about-icon {
+    min-width: 55px;
+    height: 55px;
+    display: grid;
+    place-items: center;
+    background: rgba(56,189,248,.1);
+    border-radius: 12px;
+    color: var(--accent);
+    font-size: 25px;
+}
+
+.about-card h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.about-card p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 2.1;
+}
+
+/* =========================
+   7. Skills
+========================= */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.skill-card {
+    padding: 24px 18px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    transition: .3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--accent);
+    background: var(--surface-light);
+}
+
+.skill-icon {
+    font-size: 25px;
+}
+
+.skill-card h3 {
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+.skill-card p {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 5px;
+}
+
+/* =========================
+   8. Projects
+========================= */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.project-card {
+    padding: 28px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    transition: .3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: #3b82f6;
+}
+
+.project-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.project-folder {
+    font-size: 25px;
+}
+
+.project-label {
+    font-family: 'Fira Code', monospace;
+    color: var(--accent);
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+.project-card h3 {
+    margin-top: 25px;
+    font-size: 19px;
+}
+
+.project-card p {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 2;
+    margin-top: 12px;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 22px;
+}
+
+.project-tags span {
+    padding: 5px 10px;
+    border-radius: 5px;
+    background: #1c2b42;
+    color: #93c5fd;
+    font-size: 10px;
+}
+
+.project-link {
+    display: inline-block;
+    margin-top: 25px;
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.project-link:hover {
+    color: white;
+}
+
+/* =========================
+   9. Contact
+========================= */
+
+.contact-card {
+    text-align: center;
+    padding: 65px 25px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background:
+        radial-gradient(circle at top, rgba(56,189,248,.1), transparent 65%),
+        var(--surface);
+}
+
+.contact-card h2 {
+    font-size: clamp(25px, 5vw, 40px);
+    margin-top: 18px;
+}
+
+.contact-card p {
+    max-width: 520px;
+    margin: 15px auto 28px;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* =========================
+   10. Footer
+========================= */
+
+.footer {
+    border-top: 1px solid var(--border);
+    margin-top: 80px;
+    padding: 25px 5%;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+/* =========================
+   11. Responsive Design
+========================= */
+
+@media (max-width: 850px) {
+
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 75px;
+        padding-top: 65px;
+    }
+
+    .hero-visual {
+        max-width: 560px;
+        width: 100%;
+        margin: auto;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .navbar {
+        height: auto;
+        min-height: 70px;
+        flex-wrap: wrap;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .nav-links {
+        order: 3;
+        width: 100%;
+        justify-content: space-between;
+        gap: 8px;
+        overflow-x: auto;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+        white-space: nowrap;
+    }
+
+    .nav-button {
+        font-size: 11px;
+        padding: 7px 11px;
+    }
+
+    .hero {
+        min-height: auto;
+        padding-top: 65px;
+        padding-bottom: 70px;
+    }
+
+    .hero h1 {
+        letter-spacing: -3px;
+    }
+
+    .availability {
+        font-size: 9px;
+    }
+
+    .code-content {
+        font-size: 10px;
+        padding: 25px 15px;
+    }
+
+    .tag-python {
+        right: -5px;
+    }
+
+    .tag-django {
+        left: -5px;
+    }
+
+    .section {
+        padding-top: 65px;
+    }
+
+    .section-heading h2 {
+        font-size: 29px;
+    }
+
+    .about-card {
+        padding: 23px;
+        flex-direction: column;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .skill-card {
+        padding: 18px 13px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
+}
